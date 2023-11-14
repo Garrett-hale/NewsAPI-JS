@@ -1,0 +1,27 @@
+$primary-color: black;
+$secondary-color: white;
+$text-color: purple;
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+h1 {
+    color: $text-color;
+}
+
+body {
+    background: $primary-color;
+    font-weight: map-get($font-weights, bold)
+}
+
+
+div {
+    color: $secondary-color;
+    background: $text-color;
+
+    p {
+
+    }
+}
