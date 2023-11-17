@@ -7,10 +7,48 @@
     <title>News API</title>
 </head>
 <body>
-    <h1>My News API Website</h1>
-    <div>
-        test <!--Test-->
-        <p>Paragraph test</p>
-    </div>
+    <h1>News API Website</h1>
+    <p class="article-1">Article 1</p>
+    <a href="" class="article-link-1">Article Link 1</a>
+    <br>
+    <br>
+    <br>
+    <p class="article-2">Article 2</p>
+    <a href="" class="article-link-2">Article Link 2</a>
+    <br>
+    <br>
+    <br>
+    <p class="article-3">Article 3</p>
+    <a href="" class="article-link-3">Article Link 3</a>
+
+    <script>
+        const apiKey = "pub_328467068e734bd15546e3ce8b98e0aca3054";
+        const searchQuery = "movie"
+        const searchSize = 3;
+        const apiUrl = "https://newsdata.io/api/1/news?";
+
+        async function checkNews() {
+            const response = await fetch(apiUrl + "apikey=" + apiKey + "&q=" + searchQuery + "&size=" + searchSize);
+            var data = await response.json();
+
+            console.log(data.results);
+
+            document.querySelector(".article-1").innerHTML = data.results[0].title;
+            document.querySelector(".article-2").innerHTML = data.results[1].title;
+            document.querySelector(".article-3").innerHTML = data.results[2].title;
+
+            document.querySelector(".article-link-1").innerHTML = data.results[0].link;
+            document.querySelector(".article-link-2").innerHTML = data.results[1].link;
+            document.querySelector(".article-link-3").innerHTML = data.results[2].link;
+
+            document.querySelector(".article-link-1").href = data.results[0].link;
+            document.querySelector(".article-link-2").href = data.results[1].link;
+            document.querySelector(".article-link-3").href = data.results[2].link;
+        }
+
+
+        checkNews();
+    </script>
+
 </body>
 </html>

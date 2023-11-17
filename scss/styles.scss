@@ -15,13 +15,3 @@ body {
     background: $primary-color;
     font-weight: map-get($font-weights, bold)
 }
-
-
-div {
-    color: $secondary-color;
-    background: $text-color;
-
-    p {
-
-    }
-}
