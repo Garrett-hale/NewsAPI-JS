@@ -7,11 +7,19 @@ $font-weights: (
     "bold": 700
 );
 
-h1 {
-    color: $text-color;
-}
-
 body {
     background: $primary-color;
     font-weight: map-get($font-weights, bold)
+}
+
+h1 {
+    color: skyblue;
+}
+
+p {
+    color: $secondary-color;
+}
+
+a {
+    color: skyblue;
 }
